@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .deleted{
+
+            color: black;
+            font-size: 25px;
+            padding: 10px 13px;
+            border-radius: 50%;
+            transition: 0.2s;
+        }
+        .deleted:hover{
+            background: red;
+            color: white;
+
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="text" placeholder="name" id="userName">
+    <select id="paymentWay">
+        <option value="master">master</option>
+        <option value="paypal">paypal</option>
+        <option value="idram">idram</option>
+        <option value="bitcoin">bitcoin</option>
+        <option value="visa">visa</option>
+    </select>
+    <input type="text" placeholder="price " id="userPrice">
+    <button onclick="addInfo()"><i class="fa fa-plus"></i></button>
+</div>
+<div>
+    <input type="search" id="search">
+    <button onclick="search()"><i class="fa fa-search"></i></button>
+
+</div>
+<table border="1" width="50%" class="paymentList">
+    <thead></thead>
+    <tbody>
+
+
+    </tbody>
+</table>
+<span class="errors"></span>
+
+
+
+
+
+<script src="./script.js"></script>
+</body>
+</html>
