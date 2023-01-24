@@ -124,6 +124,7 @@ let list=[
 
 let thead=document.querySelector(".paymentList thead")
 let tbody=document.querySelector(".paymentList tbody")
+
 function trAdd(arg="tbody"){
     let tr=document.createElement("tr")
     if(arg==="thead") {
@@ -136,6 +137,7 @@ function theadF(){
     Object.keys(list[0]).forEach(res=>{
         tTr.innerHTML+=`<th>${res}</th>`
     })
+    tTr.innerHTML+=`<th>Configuration</th>`
     tBodyF(list)
 }
 theadF()
@@ -149,37 +151,22 @@ function tBodyF(mylist){
             }else{
                 tr.innerHTML+=`<td>${res[resKey]}</td>`
             }
-
         }
-        tr.innerHTML+=`<td><i class="fa fa-trash deleted"></i></td>`
+        tr.innerHTML+=`<td  onclick=deleted(event)><i class="fa fa-trash deleted" data-id=${res.id}></i></td>`
 
     })
 }
-function addInfo(){
-    let userName=document.querySelector("#userName")
-    let paymentWay=document.querySelector("#paymentWay")
-    let userPrice=document.querySelector("#userPrice")
-    list.push({
-        id:list[list.length-1].id+1,
-        name:userName.value,
-        payment_way:paymentWay.value,
-        price:userPrice.value,
 
-    })
-    tbody.innerHTML=''
-    tBodyF()
-}
 
 function search(){
     let res=document.querySelector("#search")
     let errors=document.querySelector(".errors")
     if(res.value.length){
         let mylist=list.filter(data=>data.title.toUpperCase().includes(res.value.toUpperCase()) || data.description.toUpperCase().includes(res.value.toUpperCase()))
-        tbody.innerHTML=''
 
         if (mylist.length>0){
+            tbody.innerHTML=''
             errors.innerHTML=""
-            theadF()
             tBodyF(mylist)
         }else{
             errors.innerHTML="chi gtnvel"
@@ -188,8 +175,14 @@ function search(){
     }
 
 }
-
-
+const deletedProduct=[]
+function deleted(e){
+    let uid=e.target.dataset.id
+    deletedProduct.push(+uid)
+    let a=list.filter(res=>!deletedProduct.includes(res.id))
+    tbody.innerHTML=''
+    tBodyF(a)
+}
 // tnayin
 
 // 1. delete sarqel
