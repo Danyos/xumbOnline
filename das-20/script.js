@@ -162,7 +162,7 @@ function search(){
     let res=document.querySelector("#search")
     let errors=document.querySelector(".errors")
     if(res.value.length){
-        let mylist=list.filter(data=>data.title.toUpperCase().includes(res.value.toUpperCase()) || data.description.toUpperCase().includes(res.value.toUpperCase()))
+        let mylist=list.filter(data=>data.title.toUpperCase().includes(res.value.toUpperCase().trim()) || data.description.toUpperCase().includes(res.value.toUpperCase().trim())|| data.brand.toUpperCase().includes(res.value.toUpperCase().trim()))
 
         if (mylist.length>0){
             tbody.innerHTML=''
@@ -189,3 +189,26 @@ function deleted(e){
 // 2. gumarnery achman kargov kam nvazman selectov
 // 3. gumary min max
 // 4. changche status
+
+let ii=0
+function luyss(){
+    let luys=document.querySelector(".luys")
+    if(ii){
+        ii++
+        luys.src='anjatvac.png'
+
+        document.body.style.background='white'
+        document.body.style.color='black'
+    }else{
+        luys.src='miacac.png'
+        document.body.style.background='black'
+        document.body.style.color='white'
+        ii--
+    }
+}
+
+
+// 1 lampuchken
+// 2 axusyaki delete
+
+// ameninch local storage patrastel
