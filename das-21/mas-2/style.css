@@ -1,0 +1,78 @@
+body{
+    background: rgba(0, 0, 0, 0.38);
+}
+.switcher{
+    width: 8%;
+    position: fixed;
+    top: 5%;
+    left: 0;
+    padding-bottom: 20px ;
+    background: white;
+    transform: translate(-100%);
+
+}
+.myicon{
+    position: absolute;
+    left: 100%;
+    clip-path: circle(50% at 19% 52%);
+    background: white;
+    padding-right: 25px;
+    border-left:1px solid rgb(0,0,0,.3) ;
+
+}
+.switcher h3{
+    text-align: center;
+    font-family: cursive;
+}
+.myicon i{
+    font-size: 30px;
+}
+.color_row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.color_red{
+    background: red;
+    width: 30px;
+    height: 20px;
+    padding:10px 5px;
+    border-radius: 50%;
+}
+.color_green{
+    background: green;
+    width: 30px;
+    height: 20px;
+    padding:10px 5px;
+    border-radius: 50%;
+}
+.color_yellow{
+    background: yellow;
+    width: 30px;
+    height: 20px;
+    padding:10px 5px;
+    border-radius: 50%;
+}
+.color_orange{
+    background: orange;
+    width: 30px;
+    height: 20px;
+    padding:10px 5px;
+    border-radius: 50%;
+}
+.color_blue{
+    background: blue;
+    width: 30px;
+    height: 20px;
+    padding:10px 5px;
+    border-radius: 50%;
+}
+.color_pink{
+    background: pink;
+    width: 30px;
+    height: 20px;
+    padding:10px 5px;
+    border-radius: 50%;
+}

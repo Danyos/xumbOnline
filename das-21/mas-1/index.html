@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .deleted{
+
+            color: black;
+            font-size: 25px;
+            padding: 10px 13px;
+            border-radius: 50%;
+            transition: 0.2s;
+            color: brown;
+        }
+        .deleted:hover{
+            background: red;
+            color: white;
+
+        }
+        .luys{
+            width: 50px;
+            position: fixed;
+            top: 40%;
+            right: 1%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<img src="anjatvac.png" class="luys" alt="">
+<div>
+    <input type="search" id="search">
+    <button onclick="search()"><i class="fa fa-search"></i></button>
+    <span class="errors"></span>
+</div>
+
+
+<table border="1" width="50%" class="paymentList">
+    <thead>
+
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+
+<script src="./luys.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>
