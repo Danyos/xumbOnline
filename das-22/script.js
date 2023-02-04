@@ -75,8 +75,6 @@ function action(arg,info) {
         }else{
             localStorage.setItem('user',JSON.stringify([info]))
         }
-
-
     } else {
         errors("warning2", 'uniqueId')
     }
