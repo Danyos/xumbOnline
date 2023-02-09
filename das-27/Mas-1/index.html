@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loading()">
+
+<div class="container">
+    <div class="shop">
+        <div class="shop__filters-top">
+            <div class="filter">
+                <div class="filter__category">Sort By :</div>
+                <div class="filter__rule">
+                    <input id="filter__input-1" type="radio" name="filters-top" onclick="sortprice()" value="1" class="filter__rule-input" data-filter="price" data-interaction="increase" checked>
+                    <label for="filter__input-1" class="filter__rule-label">Increasing Order</label>
+                </div>
+
+                <div class="filter__rule">
+                    <input id="filter__input-2" type="radio" value="2" checked name="filters-top" onclick="sortprice()" class="filter__rule-input" data-filter="price" data-interaction="decrease">
+                    <label for="filter__input-2" class="filter__rule-label">Decreasing Order</label>
+                </div>
+            </div>
+        </div>
+        <div class="shop__filters-left">
+            <div style="border: 1px dotted;width:90%;margin: auto">
+            <div class="filter" >
+                <div class="filter__category">Search</div>
+                <div class="filter__range" >
+                    <input type="text" placeholder="Search" id="search">
+                    <button onclick="search()">Search</button>
+                </div>
+     </div>
+            </div><div class="filter">
+                <div class="filter__category">Price</div>
+                <div class="filter__range">
+                    <input type="number" class="filter__range-input filter__range-from" placeholder="from">
+                    <input type="number" class="filter__range-input filter__range-to" placeholder="to">
+                    <button onclick="price()">Search</button>
+                </div>
+            </div>
+            <div class="filter">
+                <div class="filter__category">Filter By Status</div>
+                <div class="filter__rule">
+                    <select id="mystatusfilter" onchange="filterobj()" class="filter__rule-input">
+                        <option value="">Himnakan</option>
+                        <option>new</option>
+                        <option>refurbished</option>
+                        <option>used</option>
+                        <option>finished</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="filter">
+                <div class="filter__category">Filter By Brand</div>
+                <div class="filter__rule">
+                    <input type="checkbox" class="FILTERBYBRAND" value="Apple" >
+                    <label for="apple"> Apple</label><br>
+                    <input type="checkbox" class="FILTERBYBRAND" value="Microsoft Surface" >
+                    <label for="microsoft"> Microsoft Surface</label><br>
+                    <input type="checkbox" class="FILTERBYBRAND" value="Infinix" >
+                    <label for="infinix"> Infinix</label><br>
+                    <input type="checkbox" class="FILTERBYBRAND" value="HP" >
+                    <label for="hp"> HP</label><br>
+                    <input type="checkbox" class="FILTERBYBRAND" value="Samsung" >
+                    <label for="samsung"> Samsung</label><br>
+                    <input type="checkbox" class="FILTERBYBRAND" value="Huawei" >
+                    <label for="huawei"> Huawei</label><br>
+                    <input type="checkbox" class="FILTERBYBRAND" value="Giorgio Armani" >
+                    <label for="armani"> Giorgio Armani</label><br>
+                    <input type="checkbox" class="FILTERBYBRAND" value="OPPO">
+                    <label for="oppo"> OPPO</label><br>
+                    <input type="checkbox" class="FILTERBYBRAND" value="Royal Mirage" >
+                    <label for="microsoft"> Royal Mirage</label><br>
+                </div>
+            </div>
+            <div class="filter">
+                <div class="filter__category">Filter By Category</div>
+                <div class="filter__rule">
+                    <input type="checkbox" class="FILTERBYCATEGORY" id="smartphones" value="smartphones">
+                    <label for="smartphones"> Smartphones</label><br>
+                    <input type="checkbox" class="FILTERBYCATEGORY" id="laptops" value="laptops">
+                    <label for="laptops"> Laptops</label><br>
+                    <input type="checkbox" class="FILTERBYCATEGORY" id="fragrances" value="fragrances">
+                    <label for="fragrances"> Fragrances</label><br>
+                </div>
+            </div>
+            <div class="filter">
+                <div class="filter__category">Add New Item</div>
+                <div class="filter__rule">
+                    <input type="text" placeholder="name" id="name">
+                </div>
+                <div class="filter__rule">
+                    <input type="text" placeholder="description" id="description">
+                </div>
+                <div class="filter__rule">
+                    <input id="filter__input-21" type="number" class="filter__rule-input" placeholder="price">
+                </div>
+                <div class="filter__rule">
+                    <input type="text" placeholder="brand" id="brand">
+                </div>
+                <div class="filter__rule">
+                    <input type="text" placeholder="category" id="category">
+                </div>
+                <div class="filter__rule">
+                    <input type="text" placeholder="images" id="images">
+                </div>
+                <div class="filter__rule">
+                    <select id="mystatus">
+                        <option>new</option>
+                        <option>refurbished</option>
+                        <option>used</option>
+                        <option>finished</option>
+                    </select>
+                </div>
+                <div class="filter__rule">
+                    <button onclick="publish()">Publish</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="shop__cards">
+            <table class="axuysak" border="1">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>description</th>
+                    <th>price</th>
+                    <th>brand</th>
+                    <th>category</th>
+                    <th>images</th>
+                    <th>status</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody class="list">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--<div class="container"></div>-->
+<!--<button class="myclick">+</button>-->
+<div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
