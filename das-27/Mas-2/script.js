@@ -269,52 +269,52 @@
 
 
 // _______________Class____________________________
-class Men{
-
-    constructor(n,s) {
-        this.name=n
-        this.surname=s
-        this.age=this.x()
-    }
-    fullname(){
-        return this.name+" "+this.surname+" "+ this.x
-    }
-    fullnameToUpp(){
-        return this.fullname().toUpperCase()
-    }
-    static keys(){
-        return 1
-    }
-    x(){
-        return 47
-    }
-}
-// let x=Men.keys()
-let m=new Men("Vazgen",'Harutunyan')
-console.log(m)
-
-console.log(m.fullname())
-
-
-
-function Girl(name,s){
-    this.name=name
-    this.surname=s
-    this.age=tt()
-    Girl.prototype.fullname=function (){
-        return this.name+" "+this.surname
-    }
-    Girl.prototype.fullnameToUpp=function (){
-        return this.fullname().toUpperCase()
-    }
-   function tt(){
-        return 1
-    }
-}
-
-let g=new Girl("Varduhi","Lalayan")
-
-console.log(g)
+// class Men{
+//
+//     constructor(n,s) {
+//         this.name=n
+//         this.surname=s
+//         this.age=this.x()
+//     }
+//     fullname(){
+//         return this.name+" "+this.surname+" "+ this.x
+//     }
+//     fullnameToUpp(){
+//         return this.fullname().toUpperCase()
+//     }
+//     static keys(){
+//         return 1
+//     }
+//     x(){
+//         return 47
+//     }
+// }
+// // let x=Men.keys()
+// let m=new Men("Vazgen",'Harutunyan')
+// console.log(m)
+//
+// console.log(m.fullname())
+//
+//
+//
+// function Girl(name,s){
+//     this.name=name
+//     this.surname=s
+//     this.age=tt()
+//     Girl.prototype.fullname=function (){
+//         return this.name+" "+this.surname
+//     }
+//     Girl.prototype.fullnameToUpp=function (){
+//         return this.fullname().toUpperCase()
+//     }
+//    function tt(){
+//         return 1
+//     }
+// }
+//
+// let g=new Girl("Varduhi","Lalayan")
+//
+// console.log(g)
 
 
 
@@ -327,24 +327,24 @@ console.log(g)
 
 
 
-class Login {
-    constructor(l,p) {
-        this.login=l
-        this.psw=p
-    }
-    validate(){
+// class Login {
+//     constructor(l,p) {
+//         this.login=l
+//         this.psw=p
+//     }
+//     validate(){
+//
+//     }
+//     action(){
+//
+//     }
+//     errors(){
+//
+//     }
+// }
 
-    }
-    action(){
 
-    }
-    errors(){
-        
-    }
-}
-
-
-let l=new Login("dsfdf","dfed")
+// let l=new Login("dsfdf","dfed")
 
 
 
