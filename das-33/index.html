@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body onload="productByCategory()">
+<header>
+    <nav>
+        <input type="checkbox" id="show-search">
+        <input type="checkbox" id="show-menu">
+        <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+        <div class="content">
+            <div class="logo"><a href="https://www.smdevloper.com/" target="_blank">&#128540; devloper</a></div>
+            <ul class="links">
+<!--                <li><a href="#">Home</a></li>-->
+
+
+            </ul>
+        </div>
+        <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+        <form action="#" class="search-box">
+            <input type="text" placeholder="Type Something to Search..." required>
+            <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+        </form>
+    </nav>
+</header>
+<div class="parent"></div>
+
+<div id="modal">
+    <div class="modal_box">
+      <span class="close">&times;</span>
+      <div class="content"></div>
+    </div>
+</div>
+<div class="parentpagination">
+    <div class="pagination">
+
+
+    </div>
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>

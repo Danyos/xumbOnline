@@ -1,23 +1,36 @@
+function asas(){
+    fetch("https://testapi.danisoft.am/api/post/category/all")
+        .then(response => response.json())
+        .then(res =>{
+            pageHeader(res)
 
-function info(){
-    let g=localStorage.getItem('list')
-    if(g){
+        } ).catch(err=>{
+        console.log(err)
+    })
+}
+asas()
+function info(url='https://testapi.danisoft.am/api/post?page=1'){
 
-        printView(JSON.parse(g))
-    }else{
-        fetch('https://jsonplaceholder.typicode.com/posts')
+    fetch(url)
             .then(response => response.json())
             .then(res =>{
-                localStorage.setItem('list',JSON.stringify(res))
-                printView(res)
+                pagination(res.links)
+                printView(res.data)
 
             } ).catch(err=>{
             console.log(err)
         })
-    }
 
 }
+
+function pageHeader(data){
+let links=document.querySelector('.links')
+    data.forEach(res=>{
+        links.innerHTML+=`<li><a href="#">${res.name}</a></li>`
+    })
+}
 function printView(arg){
+
     let parent=document.querySelector('.parent')
     parent.innerHTML=''
 arg.forEach(res=>{
@@ -25,8 +38,11 @@ arg.forEach(res=>{
 let one=document.createElement('div')
   one.classList.add('one')
   parent.appendChild(one)
-  one.innerHTML+=`<h2>${res.title}</h2>`
-  one.innerHTML+=`<p>${res.body}</p>`
+  one.innerHTML+=`<h1>${res.id}</h1>`
+  one.innerHTML+=`<h2>${res.FullName}</h2>`
+  one.innerHTML+=`<div>${res.category.name}</div>`
+  one.innerHTML+=`<p>${res.email}</p>`
+  one.innerHTML+=`<div>${res.category_id}</div>`
   one.innerHTML+=`<button class="btn2" data-id="${res.id}" onclick="readMore(event)">Read More</button>`
 
   one.innerHTML+=`<button class="icon" data-id="${res.id}" onclick="remove(event)"><i class="fa fa-times-circle-o" aria-hidden="true" style="font-size:30px;"></i></button>`
@@ -34,11 +50,6 @@ let one=document.createElement('div')
 }
 
 function remove(e) {
-    let uid=e.target.parentElement.dataset.id
-    let item=JSON.parse(localStorage.getItem('list'))
-    item=item.filter(res=>res.id!== +uid)
-    localStorage.setItem('list',JSON.stringify(item))
-    printView(item)
 
 }
 
@@ -74,8 +85,22 @@ window.onclick = function(event) {
   }
 }
 
-// 3. buttonov
-// 2. scrolloe
-// 1.https://www.w3schools.com/css/css3_pagination.asp
+
+function pagination(data){
+    let tagpagination=document.querySelector('.pagination')
+    tagpagination.innerHTML=''
+    data.forEach(res=>{
+        console.log(res)
+        tagpagination.innerHTML+=`<a href="${res.url||"#"}"  class="paginationLink ${res.active?'active':''}">${res.label}</a>`
+    })
+    let paginationLink=document.querySelectorAll('.paginationLink')
+    paginationLink.forEach(res=>{
+        res.addEventListener("click",function (event){
+                    event.preventDefault()
+
+            info(event.target.href)
+        })
+    })
+}
 
 
