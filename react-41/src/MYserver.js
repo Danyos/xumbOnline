@@ -1,0 +1,1 @@
+export const Myinfo=['one','two','three','for','five','six']
