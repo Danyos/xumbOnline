@@ -183,10 +183,34 @@
 // kam teblov
 
 
-document.write("barev\t&nbsp;\t&nbsp;\t&nbsp;\t&nbsp;\t&nbsp;\t&nbsp;\t&nbsp;vonces")
+// document.write("barev\t&nbsp;\t&nbsp;\t&nbsp;\t&nbsp;\t&nbsp;\t&nbsp;\t&nbsp;vonces")
+
+console.time("s1")
+first:for (let i=2;i<10000;i++){
+
+    for (let j=2;j<=Math.sqrt(i);j++){
+        if(i%j === 0){
+            continue first
+        }
+    }
+    console.log(i)
+
+}
+console.timeEnd("s1")
 
 
+console.time("s2")
+first:for (let i=2;i<10000;i++){
 
+    for (let j=2;j<=i;j++){
+        if(i%j === 0){
+            continue first
+        }
+    }
+    console.log(i)
+
+}
+console.timeEnd("s2")
 
 
 
