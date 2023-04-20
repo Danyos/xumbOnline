@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.conteudo {
+  position: absolute;
+  z-index: -2;
+  height: 100vh;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: 75px;
+  line-height: 75px;
+  padding: 0 10%;
+  background: #6465DB;
+  box-shadow: 5px 0 5px #404040;
+}
+
+nav .logo {
+  font-size: 28px;
+  color: #9191E4;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+nav .nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+nav .nav-list .nav-item {
+
+  border-radius: 20px 0 20px 0;
+}
+.nav-item a{
+  padding: 0 30px;
+  height: 100%;
+}
+nav .nav-list .nav-item:hover {
+  background: #FFF;
+}
+
+nav .nav-list .nav-item a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: #9191E4;
+}
+
+@media (max-width: 935px) {
+
+  nav {
+    padding: 0 2rem;
+  }
+
+  nav .nav-list .nav-item{
+    padding: 0 20px;
+  }
+
+}
+
+@media (max-width: 635px) {
+
+  nav {
+    padding: 0 1rem;
+  }
+
+  nav .nav-list {
+    display: grid;
+    position: absolute;
+    padding-bottom: 10px;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background: #6465DB;
+    transform: translateY(-100%);
+    z-index: -1;
+    transition: .4s;
+  }
+
+  nav .nav-list .nav-item {
+    border-radius: 15px 0 15px 0;
+    margin: 0 10px;
+  }
+
+  .check-bt:checked ~ nav {
+    box-shadow: none;
+  }
+
+  .menu-toggle {
+    display: grid !important;
+  }
+
+}
+
+.check-bt {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+  margin: 18px 5px 0 0;
+  height: min-content;
+}
+
+.menu-toggle .bar {
+  width: 40px;
+  height: 5px;
+  border-radius: 20px;
+  background: #9191E4;
+  margin-bottom: 10px;
+  transition: .4s;
+}
+
+.check-bt:checked ~ nav .nav-list {
+  transform: translateY(0);
+}
+
+.check-bt:checked ~ nav .menu-toggle {
+  margin-top: 35px;
+}
+
+.check-bt:checked ~ nav .menu-toggle .bar:nth-child(1) {
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.check-bt:checked ~ nav .menu-toggle .bar:nth-child(2) {
+  display: none;
+}
+
+.check-bt:checked ~ nav .menu-toggle .bar:nth-child(3) {
+  transform: rotate(-45deg);
+}
+.post{
+  width: 23%;
+box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.52);
+}
+.postAll{
+  width: 75%;
+  margin:35px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap:45px 0;
+  padding: 25px 0;
+
+}
